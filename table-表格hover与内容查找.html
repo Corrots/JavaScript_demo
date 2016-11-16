@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>表格操作</title>
+<script type="text/javascript">
+window.onload=function(){
+	var oTxt=document.getElementsByTagName('input')[0];
+	var oBtn=document.getElementsByTagName('input')[1];
+	var oTable=document.getElementsByTagName('table')[0];
+
+	var aRows=oTable.tBodies[0].rows;
+	var aName=null;
+	var iColor=null;
+
+	for(var i=0;i<aRows.length;i++){
+
+		if(i%2==0){
+			aRows[i].style.backgroundColor='#e5e5e5';
+		}
+
+
+		aRows[i].onmouseover=function(){
+			iColor=this.style.backgroundColor;
+			this.style.backgroundColor='orange';
+		}
+
+		aRows[i].onmouseout=function(){
+			this.style.backgroundColor=iColor;
+		}
+	}
+
+
+/*	
+	// 多项查找
+	oBtn.onclick=function(){
+		var arr=oTxt.value.split(' ');
+
+		for(var i=0;i<aRows.length;i++){
+			aRows[i].style.backgroundColor='';
+
+			// aRows[i].cells[1].innerHTML
+			for(var j=0;j<arr.length;j++){
+				if(aRows[i].cells[1].innerHTML.indexOf(arr[j])!=-1){
+					aRows[i].style.backgroundColor='orange';
+				}
+			}
+		}
+	}
+*/
+/*
+	// 
+	oTxt.onkeyup=function(){
+		// 
+		for(var i=0;i<aRows.length;i++){
+
+			aRows[i].style.backgroundColor='';
+
+			// aRows[i].cells[1].innerHTML
+			aName=aRows[i].cells[1].innerHTML;
+			if(aName.indexOf(this.value)!=-1&&this.value!=''){
+				aRows[i].style.backgroundColor='#cc3333';
+			}
+		}
+	}
+*/
+
+}	
+</script>
+
+
+</head>
+
+<body>
+	<input type="text"/>
+	<input type="button" value="查 询"/>
+	<table border="2" width="300">
+		<thead><td>学号</td><td>姓名</td><td>操作</td></thead>
+		<tbody>
+			<tr><td>1</td><td>zhangsan</td><td> </td></tr>
+			<tr><td>2</td><td>lisi</td><td> </td></tr>
+			<tr><td>3</td><td>wangwu</td><td> </td></tr>
+			<tr><td>4</td><td>zhaoqi</td><td> </td></tr>
+			<tr><td>5</td><td>zhanasan</td><td> </td></tr>
+		</tbody>
+	</table>
+</body>
+</html>

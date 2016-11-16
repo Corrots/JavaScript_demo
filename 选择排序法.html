@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>选择排序法</title>
+<script type="text/javascript">
+
+// 选择排序法
+function selectSort(arr){
+	var temp=0;
+
+	for(var i=0;i<arr.length-1;i++){
+		var min=arr[i];
+		var minIndex=i;
+
+		for(var j=i+1;j<arr.length;j++){
+			if(min>arr[j]){
+				min=arr[j];
+				minIndex=j;
+			}
+		}
+		//
+		temp=min;
+		arr[minIndex]=arr[i];
+		arr[i]=temp;
+	}
+
+	return arr;
+
+}
+
+var arr=[12,89,57,-908,32,13,368];
+
+document.write(selectSort(arr));
+
+
+
+
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

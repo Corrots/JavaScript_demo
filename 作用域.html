@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>作用域</title>
+<script type="text/javascript">
+/*
+var a=1;
+function fn1(){
+	alert(a);
+	var a=2;
+}
+
+fn1();
+alert(a);
+
+var a=1;
+function fn1(){
+	alert(a);
+	a=2;
+}
+fn1();		// 1
+alert(a);	// 2
+
+var a=1;
+function fn1(a){
+	alert(a);
+	a=2;
+}
+fn1();		// undefined
+alert(a);	// 1 	函数内部a为形参
+
+*/
+
+var a=1;
+function fn1(a){
+	alert(a);
+	a=2;
+}
+fn1(a);		// 1
+alert(a);	// 1
+
+
+alert(Number.MAX_VALUE)
+</script>
+</head>
+
+<body>
+
+</body>
+</html>
